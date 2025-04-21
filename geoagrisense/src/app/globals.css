@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 60 25% 98%;
+    --foreground: 120 10% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 120 10% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 120 10% 10%;
+    --primary: 142 60% 35%;
+    --primary-foreground: 355.7 100% 97.3%;
+    --secondary: 36 40% 92%;
+    --secondary-foreground: 36 40% 20%;
+    --muted: 120 10% 96%;
+    --muted-foreground: 120 5% 45%;
+    --accent: 78 55% 85%;
+    --accent-foreground: 78 30% 20%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 120 10% 85%;
+    --input: 120 10% 85%;
+    --ring: 142 60% 35%;
+    --radius: 0.5rem;
+    /* Earthy color palette for charts */
+    --chart-1: 120 50% 40%;  /* Forest Green */
+    --chart-2: 36 70% 45%;   /* Earth Brown */
+    --chart-3: 160 40% 35%;  /* Sage Green */
+    --chart-4: 45 90% 45%;   /* Harvest Gold */
+    --chart-5: 78 60% 35%;   /* Olive Green */
+
+    /* Added custom colors for heatmap gradients */
+    --heatmap-low: 120 70% 70%;
+    --heatmap-medium: 45 90% 60%;
+    --heatmap-high: 0 80% 60%;
+
+    /* Font settings */
+    --font-sans: 'Inter', 'Poppins', system-ui, sans-serif;
+  }
+
+  .dark {
+    --background: 120 15% 8%;
+    --foreground: 60 15% 90%;
+    --card: 120 15% 12%;
+    --card-foreground: 60 15% 90%;
+    --popover: 120 15% 10%;
+    --popover-foreground: 60 15% 90%;
+    --primary: 142 50% 40%;
+    --primary-foreground: 144.9 80.4% 10%;
+    --secondary: 36 30% 18%;
+    --secondary-foreground: 36 40% 85%;
+    --muted: 120 15% 20%;
+    --muted-foreground: 120 10% 70%;
+    --accent: 78 30% 25%;
+    --accent-foreground: 78 50% 80%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 85.7% 97.3%;
+    --border: 120 15% 20%;
+    --input: 120 15% 20%;
+    --ring: 142 40% 35%;
+    /* Earthy dark mode chart colors */
+    --chart-1: 120 40% 45%;  /* Forest Green */
+    --chart-2: 36 50% 40%;   /* Earth Brown */
+    --chart-3: 160 30% 40%;  /* Sage Green */
+    --chart-4: 45 70% 50%;   /* Harvest Gold */
+    --chart-5: 78 45% 40%;   /* Olive Green */
+
+    /* Dark mode heatmap gradients */
+    --heatmap-low: 120 50% 40%;
+    --heatmap-medium: 45 70% 45%;
+    --heatmap-high: 0 60% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+  }
+}
+
+/* Custom utility classes for our application */
+@layer utilities {
+  .transition-smooth {
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  .map-container {
+    @apply w-full h-[70vh] rounded-lg overflow-hidden border border-border;
+  }
+
+  .dashboard-card {
+    @apply transition-smooth hover:shadow-md hover:translate-y-[-2px];
+  }
+}
